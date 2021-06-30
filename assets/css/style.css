@@ -13,6 +13,15 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-size: 16px;
   font-family: 'Karla', sans-serif;
+  overflow-y: scroll;
+}
+
+body nav :last-child {
+  display: none;
+}
+
+body .mobile-menu {
+  display: none;
 }
 
 @media (max-width: 425px) {
@@ -26,6 +35,74 @@ body {
   }
   nav img {
     margin: 0;
+  }
+  .mobile-menu {
+    height: 62%;
+    width: 100%;
+    text-transform: uppercase;
+    background-color: #2d2640;
+    position: absolute;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: hidden;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 2.375rem;
+    z-index: 2;
+  }
+  .mobile-menu .links {
+    width: 100%;
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 1rem;
+    margin-bottom: 3.5rem;
+  }
+  .mobile-menu .links div {
+    width: 100%;
+    height: 20%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 1.1875rem;
+    font-size: 0.8125;
+  }
+  .mobile-menu .links div a {
+    color: white;
+    text-decoration: none;
+  }
+  .mobile-menu .links div:active {
+    border: 1px solid white;
+  }
+  .mobile-menu .links div:last-child {
+    margin: 0;
+  }
+  .mobile-menu img {
+    width: 100%;
   }
   #hero {
     display: flex;
@@ -82,7 +159,7 @@ body {
   .starting-line {
     width: 149px;
     height: 1px;
-    border: 1px solid #9b9999;
+    background-color: #9b9999;
     position: absolute;
     top: 7%;
     left: 33%;
@@ -117,6 +194,7 @@ body {
     border: 1px solid black;
     width: 329px;
     height: 348px;
+    z-index: 1;
     background-color: #2d2640;
     position: relative;
   }
@@ -124,6 +202,7 @@ body {
     position: absolute;
     left: 46%;
     top: -1%;
+    z-index: -1;
     overflow: hidden;
   }
   .down-triangle h1 {
@@ -136,10 +215,24 @@ body {
   .inside-triangle {
     border: 1px solid white;
     width: 160px;
-    height: 39px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: white;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: transparent;
+  }
+  .inside-triangle:hover {
+    background: white;
+    color: black;
   }
   .inside-triangle h3 {
-    color: white;
     font-size: 11px;
     word-spacing: 0.1rem;
     letter-spacing: 0.2rem;
